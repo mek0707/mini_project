@@ -289,16 +289,15 @@ export default function Table_ex() {
 
         {/* Modal */}
         {modalData && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
-            <div className="bg-white p-6 rounded-lg w-[300px] h-full md:w-[500px] md:h-[250px] lg:w-[1000px] lg:h-[500px] overflow-auto relative">
-              <svg className="absolute top-2 right-2" onClick={() => setModalData(null)} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
-                  <path d="M15.99 7.823a.75.75 0 0 1 1.061.021l3.49 3.637a.75.75 0 0 1 0 1.038l-3.49 3.637a.75.75 0 0 1-1.082-1.039l2.271-2.367h-6.967a.75.75 0 0 1 0-1.5h6.968l-2.272-2.367a.75.75 0 0 1 .022-1.06" />
-                  <path d="M3.25 4A.75.75 0 0 1 4 3.25h9.455a.75.75 0 0 1 .75.75v3a.75.75 0 1 1-1.5 0V4.75H4.75v14.5h7.954V17a.75.75 0 0 1 1.5 0v3a.75.75 0 0 1-.75.75H4a.75.75 0 0 1-.75-.75z" />
-                </g>
-              </svg>
+          <div className="text-black fixed inset-0 z-50 overflow-auto justify-center bg-gray-800 bg-opacity-50 flex items-center text-[18px] ">
+            <div className="bg-white p-6 rounded-lg shadow-lg w-[300px] h-full md:w-[500px] md:h-[250px] lg:w-[1000px] lg:h-[500px] overflow-auto">
+              <div className="flex justify-between">
+                <h2 className="text-xl font-bold">{modalData.title}</h2>
+                <button onClick={() => setModalData(null)} className="px-4 py-2 bg-gray-300 text-gray-700 rounded">
+                  {languageMode === "th" ? "ยกเลิก" : "Cancel"}
+                </button>
+              </div>
 
-              <h2 className="text-xl font-bold">{modalData.title}</h2>
               <div className="flex items-center justify-center">
                 <img src={modalData.thumbnail} alt={modalData.title} className="w-[300px] h-[300px] mt-4 rounded" />
               </div>
@@ -311,7 +310,7 @@ export default function Table_ex() {
 
         {/* Modal for editing */}
         {isModalOpen && (
-          <div className="fixed inset-0 z-50 overflow-auto justify-center bg-gray-800 bg-opacity-50 flex items-center text-[18px] ">
+          <div className="text-black fixed inset-0 z-50 overflow-auto justify-center bg-gray-800 bg-opacity-50 flex items-center text-[18px] ">
             <div className="bg-white p-6 rounded-lg shadow-lg w-[300px] h-full md:w-[500px] md:h-[250px] lg:w-[1000px] lg:h-[500px] overflow-auto">
               <h2 className="text-lg font-bold mb-4">{textModal} Product</h2>
               <div className="flex gap-4">

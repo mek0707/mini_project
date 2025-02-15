@@ -73,7 +73,7 @@ function ItemMove() {
           <div className="mb-4 p-4 bg-gray-200 dark:text-black font-bold">List Items</div>
           <div className={`flex flex-col gap-4 h-[30vh] lg:h-[60vh] overflow-auto mb-4`}>
             {dataTest.map((item, index) => (
-              <div key={index} onClick={() => handleItemClick(item, false)}>
+              <div className="dark:hover:text-black" key={index} onClick={() => handleItemClick(item, false)}>
                 <ItemLook index={index + 1} name={item.name} />
               </div>
             ))}
@@ -85,7 +85,7 @@ function ItemMove() {
             {dataTemporary.map((item, index) => {
               if (item.type === "Fruit") {
                 return (
-                  <div key={index} onClick={() => handleTemporaryItemClick(item)}>
+                  <div className="dark:hover:text-black" key={index} onClick={() => handleTemporaryItemClick(item)}>
                     <ItemLook index={index + 1} name={item.name} />
                   </div>
                 );
@@ -99,7 +99,7 @@ function ItemMove() {
             {dataTemporary.map((item, index) => {
               if (item.type === "Vegetable") {
                 return (
-                  <div key={index} onClick={() => handleTemporaryItemClick(item)}>
+                  <div className="dark:hover:text-black" key={index} onClick={() => handleTemporaryItemClick(item)}>
                     <ItemLook index={index + 1} name={item.name} />
                   </div>
                 );
