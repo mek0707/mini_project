@@ -1,5 +1,5 @@
 import pdfMake from "pdfmake/build/pdfmake";
-import pdfFonts from "./vfs_fonts";
+import * as pdfFonts from './vfs_fonts';
 import {LanguageContext} from "@/layouts/Layout";
 import {useContext, useEffect, useState} from "react";
 import DocDefinition, {PDF_Example_1, PDF_Test_1, PDF_Work_1, PDF_Work_1_ENGLISH, PDF_Work_1_THAI} from "./pdf_file/pdf_w_1.js";
