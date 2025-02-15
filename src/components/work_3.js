@@ -143,8 +143,8 @@ export default function GeneratePDF() {
       <div className="flex justify-end items-center"></div>
 
       <div className="border border-black dark:border-white p-4 rounded-lg">
-        <div className="grid grid-cols-6 gap-4 place-content-center">
-          <div className="col-span-6 text-center mb-4 flex justify-between">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-2 md:gap-4 place-content-center">
+          <div className="col-span-1 md:col-span-6 text-center mb-4 flex justify-between">
             <span className="underline ">{languageMode === "th" ? "ข้อมูลที่กรอกจะไม่ถูกบันทึก" : "The entered data will not be saved."}</span>
             <button className="rounded-lg bg-blue-500 p-4" onClick={printPDF_Example}>
               {languageMode === "th" ? "ตัวอย่างงานที่ทำไปแล้ว" : "Examples of work that has been done"}
@@ -152,51 +152,51 @@ export default function GeneratePDF() {
           </div>
 
           <span className="col-span-1">{languageMode === "th" ? "ชื่อเรื่อง" : "Title"}</span>
-          <input name="title" onChange={handleChange} className="col-span-2 border border-black text-black" />
+          <input name="title" onChange={handleChange} className="col-span-1 md:col-span-5 border border-black text-black" />
           <span className="col-span-1 text-black">{languageMode === "th" ? "รูป" : "Picture"}</span>
-          <div className="col-span-2">
+          <div className="col-span-1 md:col-span-5">
             <input type="file" accept="image/*" onChange={handleImageChange} />
-            {/* {formData.image && (
+            {formData.image && (
               <div>
                 <img src={formData.image} alt="Uploaded" style={{width: "100px", height: "100px"}} />
               </div>
-            )} */}
+            )}
           </div>
 
           <span className="col-span-1">{languageMode === "th" ? "ชื่อ" : "FirstName"}</span>
-          <input name="firstname" onChange={handleChange} className="col-span-2 border border-black text-black" />
+          <input name="firstname" onChange={handleChange} className="md:col-span-2 border border-black text-black" />
 
           <span className="col-span-1">{languageMode === "th" ? "นามสกุล" : "LastName"}</span>
-          <input name="lastname" onChange={handleChange} className="col-span-2 border border-black text-black" />
+          <input name="lastname" onChange={handleChange} className="md:col-span-2 border border-black text-black" />
 
           <span className="col-span-1">{languageMode === "th" ? "วัน เดือน ปี เกิด" : "Date of birth"}</span>
-          <input name="birthdate" onChange={handleChange} className="col-span-2 border border-black text-black" />
+          <input name="birthdate" onChange={handleChange} className="md:col-span-2 border border-black text-black" />
 
           <span className="col-span-1">{languageMode === "th" ? "เพศ" : "Sex"}</span>
-          <input name="gender" onChange={handleChange} className="col-span-2 border border-black text-black" />
+          <input name="gender" onChange={handleChange} className="md:col-span-2 border border-black text-black" />
 
           <span className="col-span-1">{languageMode === "th" ? "อายุ" : "Age"}</span>
-          <input name="age" onChange={handleChange} className="col-span-2 border border-black text-black" />
+          <input name="age" onChange={handleChange} className="md:col-span-2 border border-black text-black" />
 
           <span className="col-span-1"> {languageMode === "th" ? "เชื้อชาติ" : "Race"}</span>
-          <input name="race" onChange={handleChange} className="col-span-2 border border-black text-black" />
+          <input name="race" onChange={handleChange} className="md:col-span-2 border border-black text-black" />
 
           <span className="col-span-1"> {languageMode === "th" ? "สัญชาติ" : "Nationality"}</span>
-          <input name="nationality" onChange={handleChange} className="col-span-2 border border-black text-black" />
+          <input name="nationality" onChange={handleChange} className="md:col-span-2 border border-black text-black" />
 
           <span className="col-span-1"> {languageMode === "th" ? "ศาสนา" : "Religion"}</span>
-          <input name="religion" onChange={handleChange} className="col-span-2 border border-black text-black" />
+          <input name="religion" onChange={handleChange} className="md:col-span-2 border border-black text-black" />
 
           <span className="col-span-1"> {languageMode === "th" ? "สถานะปัจจุบัน" : "Current status"}</span>
-          <input name="status" onChange={handleChange} className="col-span-2 border border-black text-black" />
+          <input name="status" onChange={handleChange} className="md:col-span-2 border border-black text-black" />
 
           <span className="col-span-1"> {languageMode === "th" ? "เบอร์โทรศัพท์" : "Phone Number"}</span>
-          <input name="phone" onChange={handleChange} className="col-span-2 border border-black text-black" />
+          <input name="phone" onChange={handleChange} className="md:col-span-2 border border-black text-black" />
 
           <span className="col-span-1"> {languageMode === "th" ? "อีเมลล์" : "Email"}</span>
-          <input name="email" onChange={handleChange} className="col-span-2 border border-black text-black" />
+          <input name="email" onChange={handleChange} className="md:col-span-2 border border-black text-black" />
 
-          <button onClick={printPDF} className="col-span-6 mt-4 bg-blue-500 text-white p-2 rounded">
+          <button onClick={printPDF} className="col-span-1 md:col-span-6 mt-4 bg-blue-500 text-white p-2 rounded">
             {languageMode === "th" ? "สร้าง PDF" : "Generate PDF"}
           </button>
         </div>
