@@ -42,7 +42,9 @@ export default function Home() {
             <span>Table Get Data From DummyJSON</span>
           </div>
           <p className="text-[14px] md:text-[18px] mb-4">{languageMode === "th" ? "ตารางนี้สามารถใช้สำหรับแสดงข้อมูล ค้นหา เพิ่ม แก้ไข และลบข้อมูลได้ในที่เดียว" : "This table allows you to display, search, add, edit, and delete data all in one place."}</p>
-          <Table_ex></Table_ex>
+          <div className="p-4 border rounded-lg">
+            <Table_ex></Table_ex>
+          </div>
         </div>
 
         {/* ตัวอย่างงาน 2 */}
@@ -52,7 +54,9 @@ export default function Home() {
             <span>Auto Delete Todo List</span>
           </div>
           <p className="text-[14px] md:text-[18px] mb-4">{languageMode === "th" ? "เมื่อกดที่รายการ ระบบจะย้ายรายการนั้นไปยังหมวดหมู่โดยอัตโนมัติ หากไม่มีการตอบสนองภายใน 5 วินาที รายการจะถูกย้ายกลับไปยังรายการหลัก และเรียงตามลำดับที่กด" : "When an item is clicked, it will automatically move to its category. If there is no response within 5 seconds, it will be moved back to the main list in the order it was clicked."}</p>
-          <ItemMove></ItemMove>
+          <div className="p-4 border rounded-lg">
+            <ItemMove></ItemMove>
+          </div>
         </div>
 
         {/* ตัวอย่างงาน 3 */}
@@ -62,7 +66,9 @@ export default function Home() {
             <span>GeneratePDF use PDFMaker</span>
           </div>
           <p className="text-[14px] md:text-[18px]">{languageMode === "th" ? "กรอกข้อมูล แล้วเอาข้อมูลไปใส่ใน PDF" : "Fill in the information and insert the data into the PDF."}</p>
-          <GeneratePDF></GeneratePDF>
+          <div className="p-4 border rounded-lg">
+            <GeneratePDF></GeneratePDF>
+          </div>
         </div>
 
         {/* ตัวอย่างงาน 4 */}
@@ -72,7 +78,9 @@ export default function Home() {
             <span>Model 3D</span>
           </div>
           <p className="text-[14px] md:text-[18px]">{languageMode === "th" ? "แสดง model 3D" : "Show Model 3D"}</p>
-          <Modal3D></Modal3D>
+          {/* <div className="p-4 border rounded-lg"> */}
+            <Modal3D></Modal3D>
+          {/* </div> */}
         </div>
       </div>
     </div>
