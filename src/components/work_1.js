@@ -310,8 +310,8 @@ export default function Table_ex() {
 
         {/* Modal for editing */}
         {isModalOpen && (
-          <div className="text-black fixed inset-0 z-50 overflow-auto justify-center bg-gray-800 bg-opacity-50 flex items-center text-[18px] ">
-            <div className="bg-white p-6 rounded-lg shadow-lg w-[300px] h-full md:w-[500px] md:h-[250px] lg:w-[1000px] lg:h-[500px] overflow-auto">
+          <div onClick={closeModal} className="text-black fixed inset-0 z-50 overflow-auto justify-center bg-gray-800 bg-opacity-50 flex items-center text-[18px]">
+            <div onClick={(e) => e.stopPropagation()} className="bg-white p-6 rounded-lg shadow-lg w-[300px] h-full md:w-[500px] md:h-[250px] lg:w-[1000px] lg:h-[500px] overflow-auto">
               <h2 className="text-lg font-bold mb-4">{textModal} Product</h2>
               <div className="flex gap-4">
                 <div className="mb-4 w-1/2">
@@ -323,6 +323,7 @@ export default function Table_ex() {
                   <input type="number" value={dataPrice} onChange={(e) => setDataPrice(e.target.value)} className="mt-1 px-3 py-2 border rounded-md w-full" />
                 </div>
               </div>
+
               <div className="text-black flex gap-4">
                 <label>
                   <input type="radio" value="url" checked={uploadType === "url"} onChange={() => setUploadType("url")} className="mr-2" />
@@ -333,7 +334,9 @@ export default function Table_ex() {
                   {languageMode === "th" ? "อัปโหลดไฟล์" : "Upload File"}
                 </label>
               </div>
+
               <div className="mb-4">{uploadType === "url" ? <input type="text" placeholder="Enter image URL" value={dataThumbnail} onChange={(e) => setDataThumbnail(e.target.value)} className="border p-2 rounded w-full" /> : <input type="file" accept="image/*" onChange={handleFileChange} className="border p-2 rounded w-full" />}</div>
+
               {/* Preview รูปภาพ */}
               <div className="flex justify-center">
                 {dataThumbnail && (
@@ -348,10 +351,12 @@ export default function Table_ex() {
                 <label className="block text-sm font-medium text-gray-700">{languageMode === "th" ? "รายละเอียด" : "Description"}</label>
                 <textarea type="text" value={dataDescription} onChange={(e) => setDataDescription(e.target.value)} className="mt-1 px-3 py-2 border rounded-md w-full" />
               </div>
+
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700">{languageMode === "th" ? "ประเภท" : "Category"}</label>
                 <input type="text" value={dataCategory} onChange={(e) => setDataCategory(e.target.value)} className="mt-1 px-3 py-2 border rounded-md w-full" />
               </div>
+
               <div className="flex gap-4">
                 <div className="mb-4 w-1/2">
                   <label className="block text-sm font-medium text-gray-700">{languageMode === "th" ? "เรตติ้ง" : "Rating"}</label>
