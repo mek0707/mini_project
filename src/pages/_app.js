@@ -5,12 +5,14 @@ import {useRouter} from "next/router";
 
 function MyApp({Component, pageProps}) {
   const router = useRouter();
-  const isIndexOr404 = router.pathname === "/" || pageProps?.statusCode === 404;
+  const isIndexOr404 = router.pathname === "/" || router.pathname === "/404" || pageProps?.statusCode === 404;
 
   return (
     <div className="bg-white dark:bg-slate-900 min-h-screen">
       {isIndexOr404 ? (
-        <Component {...pageProps} />
+        <div>
+          <Component {...pageProps} />
+        </div>
       ) : (
         <Layout>
           <Component {...pageProps} />

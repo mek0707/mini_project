@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 🎨 สร้าง Keyframes Animation */
+@keyframes colorChange_border {
+  0% {
+    border-color: rgb(232, 232, 9);
+    border-width: 2px;
+  }
+  50% {
+    border-color: rgb(52, 215, 11);
+    border-width: 2px;
+  }
+  100% {
+    border-color: rgb(232, 232, 9);
+    border-width: 2px;
+  }
+}
+
+/* 📌 เพิ่มเข้า Tailwind Utilities */
+@layer utilities {
+  .animate-colorBorderChange {
+    animation: colorChange_border 0.5s infinite alternate;
+  }
+}
+
+@keyframes colorChange_background {
+  0% {
+    background-color: rgb(232, 232, 9);
+  }
+  100% {
+    background-color: rgb(52, 215, 11);
+  }
+}
+
+/* 📌 เพิ่มเข้า Tailwind Utilities */
+@layer utilities {
+  .animate-colorBackGroundChange {
+    animation: colorChange_background 0.5s infinite alternate;
+  }
+}

@@ -54,11 +54,12 @@ export default function Layout({children}) {
 
   const openPDF = () => {
     // if (languageMode === "th") {
-    const pdfUrl = "/Resume วงศธร นฤโรจนวารี.pdf";
+    const pdfUrl = "/CV THAI 2568.pdf";
     //   window.open(pdfUrl, "_blank");
     // }else{
-    // const pdfUrl_1 = "/CV ENGLISH 2025.pdf";
+    const pdfUrl_1 = "/CV ENGLISH 2025.pdf";
     window.open(pdfUrl, "_blank");
+    window.open(pdfUrl_1, "_blank");
     // }
   };
 
@@ -110,9 +111,6 @@ export default function Layout({children}) {
                 </span>
                 <span onClick={() => router.push("/home/contact")} className="p-2 px-3 hover:text-black dark:hover:text-gray-300 cursor-pointer">
                   {languageMode === "th" ? "ติดต่อ" : "Contact"}
-                </span>
-                <span onClick={() => router.push("/home/plan")} className="p-2 px-3 hover:text-black dark:hover:text-gray-300 cursor-pointer">
-                  {languageMode === "th" ? "แผนอัพเดท" : "Update plan"}
                 </span>
               </div>
             </div>
